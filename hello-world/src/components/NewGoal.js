@@ -1,14 +1,16 @@
 import React from 'react';
 
 
-  const NewGoal = () => {
+  const NewGoal = props => {
+
     const addGoalHandler = event => {
       event.preventDefault()
+
       const newGoal = {
         id: Math.random().toString(),
         text: "my new goal"
       }
-        console.log(newGoal)
+       props.onAddGoal(newGoal)
     }
     return (
       <form className="new-goal" onSubmit={addGoalHandler}>

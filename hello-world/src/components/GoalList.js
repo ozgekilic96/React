@@ -1,12 +1,14 @@
 import React from 'react';
 
-const GoalList = () => {
+const GoalList = props => {
 
   return (
-    <ul className="goal-list" >
-      <li>Finish your course </li>
-      <li>Learn about all the topis </li>
-      <li>Help other students </li>
+    <ul className="goal-list">
+      {props.goals.map(goal => {
+        return <li key={goal.id}>{goal.text}</li>
+
+      })}
+
     </ul>
   );
 };

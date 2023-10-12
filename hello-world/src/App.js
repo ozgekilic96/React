@@ -12,18 +12,27 @@ import EventBind from './components/wishas/EventBind'
 import ParentComponent from './components/wishas/ParentComponent'
 import ChildComponent from './components/wishas/ChildComponent'
 import UserGreeting from './components/wishas/UserGreeting'
-
 import GoalList from './components/GoalList'
 import NewGoal from './components/NewGoal'
 
 
   const App = () => {
+      const courseGoals = [
+        {id: "cg1", text:"Finish your course"},
+        {id: "cg2", text:"Learn about all the topis "},
+        {id: "cg3", text:"Help other students"},
+      ]
+      const addNewGoalHandler = (newGoal) => {
+        courseGoals.push(newGoal)
+        console.log(courseGoals)
+      }
+
+
     return (
       <div>
-
         <h2 className="header">Class Goals</h2>
-        <NewGoal  />
-        <GoalList />
+        <NewGoal onAddGoal={addNewGoalHandler} />
+        <GoalList goals={courseGoals} />
 
         {/* < UserGreeting /> */}
         {/* <ParentComponent /> */}
