@@ -1,25 +1,31 @@
 import logo from './logo.svg'
 import './App.css'
-import Greet from './components/Greet'
-import Welcome from './components/Welcome'
+import Greet from './components/wishas/Greet'
+import Welcome from './components/wishas/Welcome'
 import React, { Component } from 'react'
-import Hello from './components/Hello'
-import Message from './components/Message'
-import Counter from './components/Counter'
-import FunctionClick from './components/FunctionClick'
-import ClassClick from './components/ClassClick'
-import EventBind from './components/EventBind'
-import ParentComponent from './components/ParentComponent'
-import ChildComponent from './components/ChildComponent'
-import UserGreeting from './components/UserGreeting'
+import Hello from './components/wishas/Hello'
+import Message from './components/wishas/Message'
+import Counter from './components/wishas/Counter'
+import FunctionClick from './components/wishas/FunctionClick'
+import ClassClick from './components/wishas/ClassClick'
+import EventBind from './components/wishas/EventBind'
+import ParentComponent from './components/wishas/ParentComponent'
+import ChildComponent from './components/wishas/ChildComponent'
+import UserGreeting from './components/wishas/UserGreeting'
+
+import GoalList from './components/GoalList'
+import NewGoal from './components/NewGoal'
 
 
-class App extends Component {
-
-  render () {
+  const App = () => {
     return (
-      <div className="App">
-        < UserGreeting />
+      <div>
+
+        <h2 className="header">Class Goals</h2>
+        <NewGoal  />
+        <GoalList />
+
+        {/* < UserGreeting /> */}
         {/* <ParentComponent /> */}
         {/* <EventBind /> */}
         {/* <FunctionClick /> */}
@@ -37,7 +43,7 @@ class App extends Component {
        {/*  <Welcome/> */} */
         {/* <Hello/> */}
       </div>
-    )
-  }
-}
+    );
+  };
+
 export default App;
