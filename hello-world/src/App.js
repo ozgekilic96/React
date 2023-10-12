@@ -11,7 +11,10 @@ import NewGoal from './components/NewGoal'
       {id: "cg3", text:"Help other students"},
     ])
     const addNewGoalHandler = newGoal => {
-      setCourseGoals(courseGoals.concat(newGoal))
+      /* setCourseGoals(courseGoals.concat(newGoal)) */
+      setCourseGoals((prevCourseGoals) => {
+        return prevCourseGoals.concat(newGoal);
+      })
     }
 
 
