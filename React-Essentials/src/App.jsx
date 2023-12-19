@@ -23,7 +23,7 @@ function App() {
       <section id="core-concepts">
         <ul>
           {CORE_CONCEPTS.map((conceptItem) => (
-            <CoreConcept {...conceptItem} />
+            <CoreConcept key={conceptItem.title} {...conceptItem} />
           ))}
 
         </ul>
@@ -46,7 +46,7 @@ function App() {
             </pre>
           </div>
         ) : null}
-        
+
       </section>
     </div>
   );
