@@ -6,6 +6,10 @@ import Log from './components/Log.jsx';
 import GameOver from './components/GameOver.jsx'
 import { WINNING_COMBINATIONS } from "./winning-combinations.js"
 
+const PLAYERS = {
+  X: 'Player 1',
+  O: 'Player 2'
+};
 
 function deriveActivePlayer(gameTurns) {
 
@@ -56,10 +60,7 @@ const initialGameBoard = [
 
 
 function App() {
-  const [players, setPlayers] = useState({
-    X: 'Player 1',
-    0: 'Player 2',
-  })
+  const [players, setPlayers] = useState(PLAYERS)
   const [gameTurns, setGameTurns] = useState([]);
   /* const [hasWinner, setHasWinner] = useState(false) */
  /*  const [activePlayer, setActivePlayer] = useState("X"); */
@@ -89,7 +90,7 @@ function App() {
   }
 
   function handlePlayerNameChange(symbol, newName) {
-    setPlayers(prevPlayers => {
+    setPlayers(prevPlayer => {
       return {
         ...prevPlayer,
         [symbol]: newName
@@ -102,13 +103,13 @@ function App() {
       <div id="game-container">
         <ol id="players" className="highlight-player">
           <Player
-            initialName="Player 1"
+            initialName={PLAYERS.X}
             symbol="X"
             isActive={activePlayer === "X"}
             onChangeName={handlePlayerNameChange}
           />
           <Player
-            initialName="Player 2"
+            initialName={PLAYERS.O}
             symbol="0"
             isActive={activePlayer === "0"}
             onChangeName={handlePlayerNameChange}
